@@ -9,32 +9,32 @@ public class Calculator {
         int y;
         String symbol;
 
-        System.out.print(" Укажите первое числовое значение: ");
+        System.out.print("Укажите первое числовое значение:");
 
         x = calc.nextInt();
 
-        System.out.print(" Укажите знак арифметического действия (+,-,*,/): ");
+        System.out.print("Укажите знак арифметического действия (+,-,*,/):");
 
         symbol = calc.next();
 
-        System.out.print(" Укажите второе числовое значение: ");
+        System.out.print("Укажите второе числовое значение:");
 
         y = calc.nextInt();
 
         switch (symbol) {
             case "+":
-                System.out.println(x+y);
+                System.out.println("Ответ:" + (x+y));
                 break;
             case "-":
-                System.out.println(x-y);
+                System.out.println("Ответ:" + (x-y));
                 break;
             case "*":
-                System.out.println(x*y);
+                System.out.println("Ответ:" + (x*y));
                 break;
             case "/":
                 if (y == 0) {
                     System.out.println("Делить на 0 нельзя");
-                }   else {System.out.println(x/y);
+                }   else {System.out.println("Ответ:" + (x/y));
                 }
         }
     }
