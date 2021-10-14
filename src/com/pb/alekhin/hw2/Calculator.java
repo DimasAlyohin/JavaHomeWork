@@ -34,7 +34,7 @@ public class Calculator {
             case "/":
                 if (y == 0) {
                     System.out.println("Делить на 0 нельзя");
-                }   else {System.out.println("Ответ:" + (x/y));
+                }   else {System.out.println("Ответ: " + (x/y));
                 }
         }
     }
