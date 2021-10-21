@@ -6,42 +6,37 @@ import java.util.Scanner;
 public class Bingo {
 
     public static void main(String[] args) {
-        System.out.println("Угадайте задуманное число с десяти попыток.");
-        System.out.println("Для выхода из программы введите - сдаюсь.");
-        System.out.println("Попитка 1. Ведите число от 0 до 100:");
+        System.out.println("Угадайте число которое загадала программа (0-100).");
+        System.out.println("Для выхода из программы введите - 505.");
 
-        final int MAX_ATTEMPT = 5;
-        int attempt = 1;
+        final int MAX_ATTEMPT;
+        int attempt = 0;
         Random random = new Random();
         int x = random.nextInt(101);
         int y;
-        String exit = "сдаюсь";
-        System.out.println(x);
 
         Scanner num = new Scanner(System.in);
 
-        y = num.nextInt();
-
-        while (attempt < MAX_ATTEMPT) {
+        while (true) {
             attempt++;
-            if (y < x) {
-                System.out.println("Попытка " + attempt + ".Загаданное число больше:");
-            } else {
-                System.out.println("Попытка " + attempt + ".Загаданное число меньше:");
-            }
+            System.out.println("Попытка " + attempt + ":");
             y = num.nextInt();
-            // или (занятие 2 как превращать строку в число)
-            String value = num.next();
-
-
-            if (value.equals("сдаюсь")) {
+            if (y == 505) {
                 break;
-
-
             }
-
-
-
+            if (y < x) {
+                System.out.println("Загаданое число больше");
+            } else if (y > x) {
+                System.out.println("Загаданое число меньше");
+            }
+            if (y == 505) {
+                break;
+            }
+            if (y != x) {
+                continue;
+            }
+            System.out.println("Biiiiingooooo!!! Вы угадали с " + attempt + " попытки!");
+            break;
         }
         System.out.println("Конец игры!");
     }
